@@ -41,6 +41,7 @@ for(let k = 0; k < funciones.length; k++) {
 }
 /********************************************************************************** */
 // NIVEL 3 EJERCICIO 2
+// Creo Funcion autoinvocable que muestra el nombre de usuario que he pasado como parametro
 const mostrarNombreDeUsuario = ((nombreDeUsuario) => {
     console.log(`El Nombre del Usuario es: ${nombreDeUsuario} `)
 })('Pedro Perez');
