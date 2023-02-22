@@ -19,6 +19,7 @@ const saludar = (nombre) => {
 console.log(`Mensaje de saludo: ${saludar(nombre)}!`)
 
 /** ***************************************************************************** */
+// NIVEL 3 EJERCICIO 1 
 // Creo Matriz de 10 Funciones
 const funciones = [];
 for(let i = 0; i < 10; i++) {
@@ -29,11 +30,17 @@ const contar = () => {
     }
   };
 
-// Agrego la funcion a la matriz 
+// Agrego las funciones a la matriz 
     funciones.push(contar);
 }
 
 // Invoco cada funcion de la matriz iterativamente
-for(let k = 0; k < 10; k++) {
-    
+for(let k = 0; k < funciones.length; k++) {
+    console.log(`Funcion: ${k}`)
+    funciones[k]()
 }
+/********************************************************************************** */
+// NIVEL 3 EJERCICIO 2
+const mostrarNombreDeUsuario = ((nombreDeUsuario) => {
+    console.log(`El Nombre del Usuario es: ${nombreDeUsuario} `)
+})('Pedro Perez');
