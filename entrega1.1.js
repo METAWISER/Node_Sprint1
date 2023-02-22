@@ -4,8 +4,8 @@
 const nombre = 'Carlos';
 const apellido = 'Zamora';
 
-const mostrarUsuario = (nombre, apellido) => {
-    console.log(`Hola tu nombre es: ${nombre} ${apellido}`);
+const mostrarUsuario = (nom, cognom) => {
+    console.log(`Hola tu nombre es: ${nom} ${cognom}`);
 }
 
 mostrarUsuario(nombre, apellido);
