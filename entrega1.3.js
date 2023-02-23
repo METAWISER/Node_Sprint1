@@ -1,4 +1,5 @@
-/** NIVEL 1 EJERCICIO 1 y 2 */
+/** NIVEL 1 EJERCICIO 1 */
+
 //  Funcion que retorna una Promesa que invoca resolve() y reject() 
 function promesa(){
     // Retornamos nueva promesa
@@ -14,14 +15,29 @@ function promesa(){
 
 promesa()
     .then((mensaje) => {
+        //Este console.log() es para formatear 
+        console.log(`\n ---NIVEL 1 EJERCICIO 1---`);
         console.log(`Esta fue la respuesta del resolve: ${mensaje}.`);
     }) 
     .catch((error) => {
+        console.log(`\n ---NIVEL 1 EJERCICIO 1---`);
         console.log(`Esta fue la respuesta del reject: ${error}.`);
     })
 
-// Arrow Fuction 
+/** NIVEL 1 EJERCICIO 2 */
+console.log(`\n ---NIVEL 1 EJERCICIO 2---`);
+// Arrow Fuction que recibe un parametro y una funcion de callback 
 const arrowFuntion = (numero, callback) => {
-    
+        if(numero > 0) {
+            callback(`El numero ${numero} es mayor que 0`)
+        } else {
+            callback(`El numero ${numero} es menor o igual que 0`)
+        }
 }
+
+arrowFuntion(0, (mensaje) => {
+   console.log(mensaje);
+});
+
+
 /** *********************************************************************** */
