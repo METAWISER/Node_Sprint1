@@ -30,8 +30,8 @@ persona.dirNom();
 /** ************************************************************************ */
 /** NIVEL 3 EJERCICIO 1 */
 console.log(`\n ---NIVEL 3 EJERCICIO 1---`);
-// Funcion Generadora de objetos de una clase abstracta
 
+// Creo la clase abstracta a la que luego voy a instanciar o crear en la siguiente funcion
 class ClaseAbs {
     constructor() {
         if(new.target === ClaseAbs){
@@ -40,7 +40,7 @@ class ClaseAbs {
         
     }
 }
-
+// Funcion Generadora de objetos de una clase abstracta
 const creadorDeObj = (curso) => {
     const objCursos = Object.create(ClaseAbs.prototype);
     objCursos.curso = curso;
