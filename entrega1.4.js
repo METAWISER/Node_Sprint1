@@ -54,13 +54,15 @@ const getSalary = (employee) => {
 
 // funcion asincrona que reutiliza getEmployee y getSalary para retornar el nombre y salario.
 async function nombreYSalario(id) {
+  try {
   const nombre = await getEmployee(id)
-    .then((resultado) => console.log(resultado))
-    .catch((error) => console.log(error));
   const salario = await getSalary({ id })
-    .then((resultado) => console.log(resultado))
-    .catch((error) => console.log(error));
+  console.log(`${nombre}\n${salario}`);
+  } catch (error) {
+    console.log(error);
+  }
 }
+
 nombreYSalario(1);
 
 /** NIVEL 1 EJERCICIO 2 */
@@ -85,38 +87,47 @@ const funcionQueRetornaPormesa = () => {
 funcionAsicrona();
 
 /** NIVEL 2 EJERCICIO 1 */
+//Funcion que retorna el doble del numero que se le pasa como parametro despues de dos segundos
 const multiplicaX2 = (num) => {
-  //return new Promise((resolve) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(num * 2);
     }, 2000);
-  //});
+  });
 };
 
-// const sumarDobles = (num1, num2, num3) => {
-//   multiplicaX2(num1)
-//     .then((resultado1) => {
-//       const numero1 = resultado1;
-//       multiplicaX2(num2).then((resultado2) => {
-//         const numero2 = resultado2;
-//         multiplicaX2(num3).then((resultado3) => {
-//           const numero3 = resultado3;
-//           console.log(resultado1 + resultado2 + resultado3);
-//         });
-//       });
-//     })
-//     .catch((error) => console.log(error));
-// };
-
-const sumassss = async (num1, num2, num3) => {
-  const numu1 = await multiplicaX2(num1);
-  const numu2 = await multiplicaX2(num2);
-  const numu3 = await multiplicaX2(num3);
-  console.log(numu1 + numu2 + numu3);
+//Funcion que recibe 3 numeros y calcula la suma de sus dobles utilizando la funcion anterio multiplicaX2()
+const sumarDobles = async (num1, num2, num3) => {
+  try {
+    const numu1 = await multiplicaX2(num1);
+    const numu2 = await multiplicaX2(num2);
+    const numu3 = await multiplicaX2(num3);
+    console.log(numu1 + numu2 + numu3);
+  } catch (error) {
+    console.log(error);
+  }
 };
+
+//Probando funcione que multiplica
 multiplicaX2(6)
   .then((resultado) => console.log(resultado))
   .catch((error) => console.log(error));
+//Prueba de funcion que suma los tres numeros dobles
 sumarDobles(2, 2, 2);
 
-sumassss(3, 3, 3);
+/* 
+//Esta es otra forma de hacer lo mismo que hace la funcion sumarDobles()
+const sumarDobles = (num1, num2, num3) => {
+  multiplicaX2(num1)
+    .then((resultado1) => {
+      const numero1 = resultado1;
+      multiplicaX2(num2).then((resultado2) => {
+        const numero2 = resultado2;
+        multiplicaX2(num3).then((resultado3) => {
+          const numero3 = resultado3;
+          console.log(resultado1 + resultado2 + resultado3);
+        });
+      });
+    })
+    .catch((error) => console.log(error));
+}; */
