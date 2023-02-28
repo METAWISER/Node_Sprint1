@@ -102,6 +102,7 @@ const sumarDobles = async (num1, num2, num3) => {
     const numu1 = await multiplicaX2(num1);
     const numu2 = await multiplicaX2(num2);
     const numu3 = await multiplicaX2(num3);
+    console.log(` ** NIVEL 2 EJERCICIO 2 *`);
     console.log(numu1 + numu2 + numu3);
   } catch (error) {
     console.log(error);
@@ -110,7 +111,7 @@ const sumarDobles = async (num1, num2, num3) => {
 
 //Probando funcione que multiplica
 multiplicaX2(6)
-  .then((resultado) => console.log(resultado))
+  .then((resultado) => console.log(` ** NIVEL 2 EJERCICIO 1 *\n${resultado}\n`))
   .catch((error) => console.log(error));
 //Prueba de funcion que suma los tres numeros dobles
 sumarDobles(2, 2, 2);
