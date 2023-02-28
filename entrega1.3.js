@@ -77,6 +77,7 @@ const getEmployee = (id) => {
         }   
     });
 };
+
 getEmployee(1)
     .then((empleado) => {
         console.log(`\n ---NIVEL 2 EJERCICIO 1---`);
@@ -127,7 +128,3 @@ getEmployee(1)
         console.log(error);
     });
 
-module.exports= {
-    getEmployee,
-    getSalary
-}
