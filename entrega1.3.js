@@ -116,7 +116,7 @@ getSalary(empleadoUno)
 // Invoco las funciones getEmployee seguido de getSalary anidando la ejecucion de las dos promesas devolviendo el empleado y el salario 
 getEmployee(1)
     .then((empleado) => {
-        console.log(`\n ---NIVEL 2 EJERCICIO 3---`);
+        console.log(`\n ---NIVEL 2 y 3 EJERCICIO 3---`);
         console.log(`Empleado: ${empleado}`);
         return getSalary(empleadoUno)
     })
@@ -124,7 +124,7 @@ getEmployee(1)
         console.log(`Salario: ${salario}`);
     })
     .catch((error) => {
-        console.log(`\n ---NIVEL 2 EJERCICIO 2---`);
+        console.log(`\n ---NIVEL 2 y 3 EJERCICIO 2---`);
         console.log(error);
     });
 
