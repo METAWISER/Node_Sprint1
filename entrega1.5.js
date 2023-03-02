@@ -69,7 +69,7 @@ exec(archivoUsuario, (error, stdout, stderr) =>{
 /** ********************************************************************************************* */
 /** NIVEL 3 */
 // Funcion que codifica dos archivos, uno en hexadecimal y otro en base64
-function createEncodedFiles() {
+function crearArchivoCodificado() {
   // leer el archivo
   const data = fs.readFileSync('pruebaEjercicio1.5.txt', 'utf-8');
   // codificar en hexadecimal
@@ -80,9 +80,10 @@ function createEncodedFiles() {
   // codificar en base64
   const base64Data = Buffer.from(data).toString('base64');
   const base64File = 'pruebaEjercicio1.5_base64.txt';
-  fs.writeFileSync(hexFile, base64Data);
+  fs.writeFileSync(base64File, base64Data);
 
   console.log(`Archivos creados: ${hexFile}, ${base64File}`);
 }
 
-createEncodedFiles()
+crearArchivoCodificado()
+
